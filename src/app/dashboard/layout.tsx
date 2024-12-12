@@ -1,9 +1,14 @@
-export default function Layout({children}: {children: React.ReactNode}) {
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import SidebarApp from "@/components/Sidebar"
+export default function Layout({ children }: { children: React.ReactNode }) {
     return (
-        <div>
-            <h1>Dashboard</h1>
-            {children}
-        </div>
+        <SidebarProvider>
+            <SidebarApp/>
+            <main>
+                <SidebarTrigger />
+                {children}
+            </main>
+        </SidebarProvider>
     )
-    
+
 }
