@@ -1,23 +1,24 @@
 import Link from "next/link";
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "./ui/sidebar";
-import Home from "@/app/page";
-import { HomeIcon } from "lucide-react";
+import { User2 } from "lucide-react";
+import { menuSideBar } from "@/lib/myUtils";
 
 export default function AppSideBar() {
     return (
-        <Sidebar>
+        <Sidebar variant="floating" collapsible="icon">
             <SidebarHeader>
-                Cabeca
+                <SidebarMenuButton asChild>
+                    <Link href={""}>< img src="./logo.png" width={16}/> <span>Seguro</span></Link>
+                </SidebarMenuButton>
             </SidebarHeader>
             <SidebarContent>
                 <SidebarGroup>
- 
                     <SidebarGroupContent>
                         <SidebarMenu>
-                            {Array.from({ length: 100 }, (_, i) => (
+                            {menuSideBar.map((item) => (
                                 <SidebarMenuItem>
                                     <SidebarMenuButton asChild>
-                                        <Link href="pushing" key={i + 1}><HomeIcon /> <span>{`Menu item ${i + 1}`}</span></Link>
+                                        <Link href={item.link} key={item.label}>{item.icon} <span>{item.label}</span></Link>
                                     </SidebarMenuButton>
                                 </SidebarMenuItem>
                             ))}
@@ -26,7 +27,9 @@ export default function AppSideBar() {
                 </SidebarGroup>
             </SidebarContent>
             <SidebarFooter>
-                Meu pe
+                <SidebarMenuButton asChild>
+                    <Link href={""}><User2 /> <span>Seguro</span></Link>
+                </SidebarMenuButton>
             </SidebarFooter>
         </Sidebar>
     )
