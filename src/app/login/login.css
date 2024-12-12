@@ -1,5 +1,6 @@
 :root {
   --primary: rgb(92, 161, 252);
+  --primaryHov: rgb(118, 165, 228);
 }
 #login_container {
   width: 100;
@@ -14,17 +15,6 @@
   height: 100%;
 }
 
-#login_left h1 {
-  font-size: 2em;
-  font-weight: 900;
-}
-
-#login_left .login_left_sub {
-  margin-bottom: 1em;
-  font-size: 0.8em;
-  font-weight: 600;
-}
-
 .social_btn_content {
   display: flex;
   align-items: center;
@@ -35,8 +25,11 @@
   background: yellow;
 }
 
-#login_right {
+.bg-primary {
   background-color: var(--primary);
+}
+
+#login_right {
   width: 50%;
   height: 100%;
 }

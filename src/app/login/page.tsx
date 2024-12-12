@@ -4,9 +4,14 @@ export default function login() {
   return (
     <div id="login_container">
       <section id="login_left">
-        <div id="login_left_content" className="transition-all duration-500 ease-in-out pd-[1.5em]">
-          <h1>Entrar</h1>
-          <p className="login_left_sub">Venha simular o seguro connosco.</p>
+        <div
+          id="login_left_content"
+          className="transition-all duration-500 ease-in-out p-[1.5em]"
+        >
+          <h1 className="font-black text-[2em]">Entrar</h1>
+          <p className="login_left_sub mb-2 font-semibold text-[0.8em]">
+            Venha simular o seguro connosco.
+          </p>
           <form>
             <div id="login_social">
               <a href="#" className="social_btn_content mb-3">
@@ -26,11 +31,14 @@ export default function login() {
                 </button>
               </a>
             </div>
-            <div id="login_separator">
-              <div className="separator_left"></div>
-              <p>ou entre com o seu email</p>
-              <div className="right"></div>
+            <div className="flex items-center space-x-2">
+              <div className="flex-grow border-t border-gray-300"></div>
+              <span className="text-sm text-gray-600">
+                ou entre com o seu email
+              </span>
+              <div className="flex-grow border-t border-gray-300"></div>
             </div>
+
             <div className="form-control mb-4">
               <label
                 htmlFor="login_email"
@@ -42,7 +50,7 @@ export default function login() {
                 type="email"
                 id="login_email"
                 placeholder="Digite o seu email"
-                className="w-full relative rounded-[60px] p-[1em] border border-[rgba(0,0,0,0.1)] text-[0.9em]"
+                className="w-full relative py-3 rounded-[60px] p-[1em] border border-[rgba(0,0,0,0.1)] text-[0.9em]"
               />
             </div>
             <div className="form-control">
@@ -56,14 +64,16 @@ export default function login() {
                 className="w-full relative py-3 rounded-[60px] p-[1em] border border-[rgba(0,0,0,0.1)] text-[0.9em]"
               />
             </div>
-            <p>
-              <a href="#" className="text-right text-[0.8em] font-bold">
+            <p className="text-right w-full mt-3">
+              <a href="#" className="text-[0.8em] font-bold">
                 Esqueci a senha
               </a>
             </p>
             <div className="form-control">
               <a href="#" id="login_btn">
-                Entrar
+                <button className="w-full relative py-3 rounded-[60px] p-[1em] font-bold bg-primary mt-2">
+                  Entrar
+                </button>
               </a>
             </div>
             <p>
@@ -72,7 +82,7 @@ export default function login() {
           </form>
         </div>
       </section>
-      <section id="login_right">
+      <section id="login_right" className="bg-primary">
         <div id="login_slide">
           <div>
             <p>O melhor seguro à um clique de distância</p>
