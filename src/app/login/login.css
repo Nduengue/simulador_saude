@@ -1,0 +1,60 @@
+:root {
+  --primary: rgb(92, 161, 252);
+}
+#login_container {
+  width: 100;
+  height: 100vh;
+}
+
+#login_left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+}
+
+#login_left h1 {
+  font-size: 2em;
+  font-weight: 900;
+}
+
+#login_left .login_left_sub {
+  margin-bottom: 1em;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+
+.social_btn_content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#login_left_content {
+  background: yellow;
+}
+
+#login_right {
+  background-color: var(--primary);
+  width: 50%;
+  height: 100%;
+}
+
+@media (min-width: 376px) {
+  #login_container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  #login_left_content {
+    min-width: 450px;
+  }
+}
+
+@media (max-width: 375px) {
+  #login_left_content {
+    min-width: 340px;
+  }
+}
