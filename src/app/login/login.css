@@ -21,9 +21,9 @@
   justify-content: flex-start;
 }
 
-#login_left_content {
+/* #login_left_content {
   background: yellow;
-}
+} */
 
 .bg-primary {
   background-color: var(--primary);

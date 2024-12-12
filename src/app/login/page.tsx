@@ -19,6 +19,7 @@ export default function login() {
                   id="login_google"
                   className="w-full relative py-4 font-semibold rounded-[60px] text-[0.8em] shadow-lg hover:shadow-xl"
                 >
+                  <i className="bi bi-facebook"></i>
                   <span>Entrar com o Google</span>
                 </button>
               </a>
@@ -27,19 +28,17 @@ export default function login() {
                   id="login_facebook"
                   className="w-full relative py-4 font-semibold rounded-[60px] text-[0.8em] shadow-lg hover:shadow-xl"
                 >
+                  <i className="bi bi-facebook"></i>
                   <span>Entrar com o Facebook</span>
                 </button>
               </a>
             </div>
-            <div className="flex items-center space-x-2">
-              <div className="flex-grow border-t border-gray-300"></div>
-              <span className="text-sm text-gray-600">
-                ou entre com o seu email
-              </span>
-              <div className="flex-grow border-t border-gray-300"></div>
-            </div>
-
-            <div className="form-control mb-4">
+            {/* <div id="login_separator">
+              <div className="separator_left"></div>
+              <span>ou entre com o seu email</span>
+              <div className="right"></div>
+            </div> */}
+            <div className="form-control mb-4 mt-4">
               <label
                 htmlFor="login_email"
                 className="font-bold text-[1em] mb-1"
