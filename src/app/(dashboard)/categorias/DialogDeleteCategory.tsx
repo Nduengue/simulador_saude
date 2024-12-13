@@ -20,7 +20,7 @@ import { ReactNode } from "react"
 export default function DialogDeleteQuestion({id, children} : DialogProps) {
     return (
         <Dialog>
-            <DialogTrigger>{children}</DialogTrigger>
+            <DialogTrigger asChild>{children}</DialogTrigger>
             <DialogContent>
                 <DialogHeader>
                     <DialogTitle>Tem a certeza absoluta?</DialogTitle>

@@ -1,8 +1,6 @@
 "use client"
-
 import { Button } from "@/components/ui/button"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
-
 import {
     Table,
     TableBody,
@@ -15,21 +13,21 @@ import {
 import { PencilIcon, Settings, Trash2 } from "lucide-react"
 import { ReactNode, useState } from "react"
 import DialogDeleteQuestion from "./DialogDeleteCategory"
+import DialogEditCategory from "./DialogEditCategory"
 
 export interface CategoriaProps {
     id: string,
     category: string,
 }
 
-
 interface CategoryListProps {
     categories: CategoriaProps[]
 }
 
- 
 export default function TableCategory({categories} : CategoryListProps) {
     const [openModal, setOpenModal] = useState(false)
     const [selectedCategory] = useState<string | null>(null)
+
     return (
         <>
         <Table>
@@ -48,7 +46,7 @@ export default function TableCategory({categories} : CategoryListProps) {
                         <TableCell className="font-medium">{index + 1}</TableCell>
                         <TableCell>{cat.category}</TableCell>
                         <TableCell>
-                            <PopoverSettingButton id={cat.id}>
+                            <PopoverSettingButton category={cat.category} id={cat.id}>
                                 <Button className="py-0 px-0 h-8 w-8" variant={"outline"}><Settings /> </Button>
                             </PopoverSettingButton>
                         </TableCell>
@@ -63,8 +61,9 @@ export default function TableCategory({categories} : CategoryListProps) {
 interface PopoverProps{
     id: string, 
     children: ReactNode,
+    category:string
 }
-function PopoverSettingButton({ children, id  }:PopoverProps) {
+function PopoverSettingButton({ children, id, category  }:PopoverProps) {
     return (
         <Popover>
             <PopoverTrigger asChild>
@@ -72,7 +71,9 @@ function PopoverSettingButton({ children, id  }:PopoverProps) {
             </PopoverTrigger>
             <PopoverContent className="w-fit">
                 <div className="gap-4 flex flex-col items-start">
-                    <Button variant={"outline"}>Editar <PencilIcon className="" /></Button>
+                    <DialogEditCategory id={id} categoria={category}> 
+                        <Button variant={"outline"}>Editar <PencilIcon className="" /></Button>
+                    </DialogEditCategory>
                     <DialogDeleteQuestion id={id}>
                         <Button variant={"outline"}>Apagar <Trash2 className="text-red-400" /></Button>
                     </DialogDeleteQuestion>

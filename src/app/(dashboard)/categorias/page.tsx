@@ -12,7 +12,7 @@ const categories: Array<CategoriaProps> = [
 ]
 
 export default async function Categoria() {
-    const categorias = await new Promise<CategoriaProps[]>((resolve) => resolve(categories)  )
+    const categorias = await new Promise<CategoriaProps[]>((resolve) => { setTimeout( () =>resolve(categories), 3000) })
 
     return (
         <div className="flex flex-col gap-4">
